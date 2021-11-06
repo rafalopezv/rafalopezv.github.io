@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Map tracker rafa</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="bus.css">
+
+
+
+    
+</head>
+
+<body>
+    <h1 class="title1"></h1>
+
+    <div id="menu">
+        <input id="ck3jkv0ua17hk1co1pmjbabqp" type="radio" name="rtoggle" value="light" checked="checked">
+        <label for="aa">light</label>
+        <input id="cjp95b3sz8bnk2rmj3ymjfbrv" type="radio" name="rtoggle" value="dark">
+        <label for="bb">dark</label>
+        <input id="cjtohc0ck7ykr1flpz1zihc3a" type="radio" name="rtoggle" value="streets">
+        <label for="cc">streets</label>
+        <input id="ckvfcm6b90tgj14o10nkbtwu5" type="radio" name="rtoggle" value="satellite">
+        <label for="dd">satellite</label>
+    </div>
+
+    <div class="map-overlay">
+        <button onclick="move()" type="button" class="btn btn-danger"> <b>Click to start</b></button>
+    </div>
+    <div id="map"></div>
+
+    <!-- <script>
+        mapboxgl.accessToken =
+            'pk.eyJ1IjoicmFmYWxvcGV6diIsImEiOiJja3YwMTNxbmY2MTFoMnZ0NGdtbXFzbmU5In0.OyQ5aLsX_R4S0ZOzxTxwiA';
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/rafalopezv/ck3jkv0ua17hk1co1pmjbabqp',
+            center: [-71.104081, 42.365554],
+            zoom: 12
+        });
+
+
+        const layerList = document.getElementById('menu');
+        const inputs = layerList.getElementsByTagName('input');
+
+        for (const input of inputs) {
+            input.onclick = (layer) => {
+                const layerId = layer.target.id;
+                map.setStyle('mapbox://styles/rafalopezv/' + layerId);
+            };
+        }
+
+        var busStop = []
+        async function run() {
+            // get bus data    
+            const locations = await getBusLocations();
+
+            busStop = locations.map((e) => {
+                return [e.attributes.longitude, e.attributes.latitude]
+            })
+            // console.log(new Date());
+            // console.log(locations);
+            // console.log(locations[1]);
+            // console.log(locations[1].attributes);
+            console.log(locations[1].attributes.latitude);
+            console.log(locations[1].attributes.longitude);
+
+            // timer
+            setTimeout(run, 5000);
+        }
+
+        // // Request bus data from MBTA
+        async function getBusLocations() {
+            const url = 'https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip';
+            const response = await fetch(url);
+            const json = await response.json();
+            return json.data;
+        }
+
+        run();
+
+
+
+        var counter = 0;
+
+        function move() {
+            setTimeout(() => {
+                run();
+
+                busStop.forEach(e => {
+                    const marker = new mapboxgl.Marker()
+                        .setLngLat(e)
+                        .addTo(map);
+
+                })
+
+
+                //  if(counter >= busStop.length) return;
+                //  marker.setLngLat(busStop[counter]);
+                //  counter++;
+                move();
+
+            }, 10000);
+        }
+    </script> -->
+    <script src="bus.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

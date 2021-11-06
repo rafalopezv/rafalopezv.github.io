@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #1F1F1F;
+  cursor:  url("https://rafalopezv.io/static/mit/mouse.png"), auto;
+}
+
+
+.eyes {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); 
+  width: 100%;
+  text-align: center;
+}
+
+.eye-right {
+  width: 240px;
+  height: 120px;
+  background: yellow;
+  display: inline-block;
+  margin: 40px;
+  border-radius: 100% 0%;
+  border-color: #1F1F1F;
+  position: relative;
+  overflow: hidden;
+}
+
+.eye-left {
+  width: 240px;
+  height: 120px;
+  background: yellow;
+  display: inline-block;
+  margin: 40px;
+  border-radius: 0 100%;
+  position: relative;
+  overflow: hidden; /* https://developer.mozilla.org/en-US/docs/Web/CSS/overflow */
+  
+}
+
+.ball {
+  width: 20px;
+  height: 100px;
+  background:#1F1F1F;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* The transform CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS */
+  border-radius: 50%;
+}
+
+#title{
+  font-family: 'Montserrat', sans-serif;
+  color: #ED4545;
+  text-align: center;
+  font-size: 60px;
+  padding: 0;
+  top: 5%;
+  position: relative;
+}
+

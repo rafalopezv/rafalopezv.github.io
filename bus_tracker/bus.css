@@ -1,0 +1,49 @@
+
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    body {
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    .map-overlay {
+        position: absolute;
+        left: 0;
+        padding-top: 50px;
+        margin-left: 0%;
+        z-index: 5;
+    }
+
+    #menu {
+        position: absolute;
+        background: #efefef;
+        padding: 10px;
+        z-index: 6;
+
+    }
+
+    .title1 {
+        font-size: 100px;
+        z-index: 5;
+        position: absolute;
+        text-align: "center";
+    }
+
+    .bi {
+        z-index: 5;
+        position: absolute;
+        text-align: "center";
+    }
+
+    .marker {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Icon-mode-bus-default.svg/2048px-Icon-mode-bus-default.svg.png");
+        background-size: cover;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
