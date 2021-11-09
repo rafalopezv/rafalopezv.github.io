@@ -1,0 +1,26 @@
+@font-face {
+    font-family: PAC-FONT;
+    src: url(PAC-FONT.TTF);
+}
+
+.titulo {
+    font-family: PAC-FONT;
+    color: yellow;
+    font-size: 8em;
+    text-align: center;
+}
+
+body {
+    background-color: #1F1F1F;
+    font-family: 'Major Mono Display', monospace;
+
+}
+
+#game {
+    text-align: center;
+}
+
+.btn-warning {
+    background-color: yellow;
+    border-color: #1F1F1F;
+}
